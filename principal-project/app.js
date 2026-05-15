@@ -1,3 +1,5 @@
+let numbersList = [];
+let limitNumber = 10;
 let secretNumber = genterateRandomNumber();
 let attempts = 1;
 
@@ -29,12 +31,23 @@ function verifyGuess() {
         showText('p', 'The secret number is lower. Try again.');
     }
     attempts++;
-    clearField()
-};showText('h1', 'Welcome to the secret number game!');
-    showText('p', 'Choose a number: 0 - 10');
+    clearField();
+}
 
 function genterateRandomNumber() {
-    return parseInt(Math.random() * 10 + 1);
+    let selectedNumber = parseInt(Math.random() * limitNumber + 1);
+    let elementsQuantity = numbersList.length;
+
+    if (elementsQuantity == limitNumber) {
+        numbersList = [];
+    }
+
+    if (numbersList.includes(selectedNumber)) {
+        return genterateRandomNumber();
+    } else {
+        numbersList.push(selectedNumber);
+        return selectedNumber;
+    }
 }
 
 function clearField() {
