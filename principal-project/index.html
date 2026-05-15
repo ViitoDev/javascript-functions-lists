@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,27 +11,27 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Adivinhe o Número</title>
+    <title>Guess the Number</title>
 </head>
 
 <body>
 
     <main class="game">
-        <span class="game__tag">// número secreto</span>
+        <span class="game__tag">// secret number</span>
 
         <header class="game__header">
-            <h1>Adivinhe o número</h1>
-            <p class="game__paragrafo">Escolha um número entre <strong>1</strong> e <strong>10</strong>.</p>
+            <h1></h1>
+            <p class="game__paragraph">Pick a number between <strong>1</strong> and <strong>10</strong>.</p>
         </header>
 
         <form class="game__form" onsubmit="event.preventDefault(); verificarChute();">
-            <label for="chute" class="game__label">Seu palpite</label>
+            <label for="chute" class="game__label">Your guess</label>
             <input id="chute" type="number" min="1" max="10" class="game__input" placeholder="—">
 
-            <div class="game__acoes">
-                <button type="submit" class="game__botao game__botao--primario">Chutar</button>
+            <div class="game__actions">
+                <button type="submit" class="game__button game__button--primary">Guess</button>
                 <button type="button" onclick="" id="reiniciar"
-                    class="game__botao game__botao--secundario" disabled>Novo jogo</button>
+                    class="game__button game__button--secondary" disabled>New game</button>
             </div>
         </form>
     </main>

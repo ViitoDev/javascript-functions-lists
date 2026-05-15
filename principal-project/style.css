@@ -75,12 +75,12 @@ body::before {
     margin-bottom: 0.5rem;
 }
 
-.game__paragrafo {
+.game__paragraph {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
 
-.game__paragrafo strong {
+.game__paragraph strong {
     color: var(--accent);
     font-weight: 600;
 }
@@ -134,13 +134,13 @@ body::before {
     -moz-appearance: textfield;
 }
 
-.game__acoes {
+.game__actions {
     display: flex;
     gap: 0.75rem;
     margin-top: 0.75rem;
 }
 
-.game__botao {
+.game__button {
     flex: 1;
     padding: 0.875rem 1rem;
     font-family: 'Inter', sans-serif;
@@ -152,27 +152,27 @@ body::before {
     transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
-.game__botao--primario {
+.game__button--primary {
     color: var(--bg);
     background: var(--primary);
 }
 
-.game__botao--primario:hover {
+.game__button--primary:hover {
     background: var(--accent);
 }
 
-.game__botao--secundario {
+.game__button--secondary {
     color: var(--text);
     background: transparent;
     border-color: var(--border);
 }
 
-.game__botao--secundario:hover:not(:disabled) {
+.game__button--secondary:hover:not(:disabled) {
     border-color: var(--border-hover);
     color: var(--primary);
 }
 
-.game__botao:disabled {
+.game__button:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
@@ -190,7 +190,7 @@ body::before {
         font-size: 1.625rem;
     }
 
-    .game__acoes {
+    .game__actions {
         flex-direction: column;
     }
 }
