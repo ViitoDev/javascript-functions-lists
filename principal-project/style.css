@@ -173,8 +173,19 @@ body::before {
 }
 
 .game__button:disabled {
-    opacity: 0.4;
+    color: var(--text-muted);
+    background: rgba(30, 41, 59, 0.4);
+    border-color: var(--border);
     cursor: not-allowed;
+    opacity: 0.6;
+    filter: grayscale(0.4);
+    box-shadow: none;
+}
+
+.game__button:disabled:hover {
+    color: var(--text-muted);
+    background: rgba(30, 41, 59, 0.4);
+    border-color: var(--border);
 }
 
 @media screen and (max-width: 540px) {

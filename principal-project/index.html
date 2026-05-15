@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,13 +23,13 @@
             <p class="game__paragraph">Pick a number between <strong>1</strong> and <strong>10</strong>.</p>
         </header>
 
-        <form class="game__form" onsubmit="event.preventDefault(); verificarChute();">
-            <label for="chute" class="game__label">Your guess</label>
-            <input id="chute" type="number" min="1" max="10" class="game__input" placeholder="—">
+        <form class="game__form" onsubmit="event.preventDefault(); verifyGuess();">
+            <label for="guess" class="game__label">Your guess</label>
+            <input id="guess" type="number" min="1" max="10" class="game__input" placeholder="—">
 
             <div class="game__actions">
-                <button type="submit" onclick="verifyGuess()" class="game__button game__button--primary">Guess</button>
-                <button type="button" onclick="" id="reiniciar"
+                <button type="submit" class="game__button game__button--primary">Guess</button>
+                <button type="button" onclick="newGame()" id="new_game"
                     class="game__button game__button--secondary" disabled>New game</button>
             </div>
         </form>

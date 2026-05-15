@@ -1,9 +1,51 @@
-let title = document.querySelector('h1');
-title.textContent = 'Secret number game';
+let secretNumber = genterateRandomNumber();
+let attempts = 1;
 
-let paragraph = document.querySelector('p');
-paragraph.textContent = 'Choose a number: 0 - 10';
+function showText(tag, text) {
+    let placement = document.querySelector(tag);
+    placement.textContent = text;
+}
+
+function initialMessage() {
+    showText('h1', 'Welcome to the secret number game!');
+    showText('p', 'Choose a number: 0 - 10');
+}
+
+initialMessage();
 
 function verifyGuess() {
-    console.log('The button has clicked')
-};
+    let guess = +document.querySelector('input').value;
+    if (guess === secretNumber) {
+        showText('h1', 'You guessed!');
+        let attemptWord = attempts > 1 ? 'attempts' : 'attempt'
+        let messageAttempts = `You found the secret number: ${secretNumber} with ${attempts} ${attemptWord}!`;
+        showText('p', messageAttempts);
+        document.getElementById('new_game').removeAttribute('disabled')
+    } else if (guess < secretNumber) {
+        showText('h1', 'Wrong!');
+        showText('p', 'The secret number is higher. Try again.');
+    } else {
+        showText('h1', 'Wrong!');
+        showText('p', 'The secret number is lower. Try again.');
+    }
+    attempts++;
+    clearField()
+};showText('h1', 'Welcome to the secret number game!');
+    showText('p', 'Choose a number: 0 - 10');
+
+function genterateRandomNumber() {
+    return parseInt(Math.random() * 10 + 1);
+}
+
+function clearField() {
+    guess = document.querySelector('input');
+    guess.value = '';
+}
+
+function newGame() {
+    secretNumber = genterateRandomNumber();
+    clearField();
+    attempts = 1;
+    initialMessage();
+    document.getElementById('new_game').setAttribute('disabled', true);
+}
